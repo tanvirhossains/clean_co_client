@@ -1,12 +1,29 @@
-
-import './App.css';
+// import './App.css';
+import { Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Home from './pages/Home';
+import Login from './pages/Login';
 
 function App() {
   return (
-    <div className="">
-      this is cleaner
 
-    </div>
+    <>
+      <Navbar >
+        <Routes>
+
+          
+        </Routes>
+        <Home />
+        <About/>
+        <Contact/>
+        <Login/>
+
+      </Navbar>
+    </>
+
+
   );
 }
 
