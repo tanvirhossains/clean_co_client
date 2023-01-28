@@ -1,23 +1,36 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Navbar = ({ children }) => {
+
+    const link = <>
+        <NavLink className="rounded-lg " to="/">Home</NavLink>
+        <NavLink to="/about">About</NavLink>
+        <NavLink to="/services">Services</NavLink>
+        <NavLink to="/contact">Contact</NavLink>
+        <select data-choose-theme>
+            <option value="">Default</option>
+            <option value="dark">Dark</option>
+            <option value="pink">Pink</option>
+        </select>
+        <NavLink to="/login">Login</NavLink>
+
+    </>
     return (
         <div class="drawer  drawer-end">
             <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
-            <div class="drawer-content flex flex-col">
+            <div class="drawer-content flex flex-col  ">
                 {/* <!-- Navbar --> */}
-                <div class="w-full navbar bg-base-300">
+                <div class="w-full navbar bg-base-300 fixed t-0 z-50">
 
                     <div class="flex-1 px-2 mx-2">Clean co.</div>
                     <div class="flex-none hidden lg:block">
                         <ul class="menu menu-horizontal">
                             {/* <!-- Navbar menu content here --> */}
                             <li>
-                                <a>Navbar Item 1</a>
+                                {link}
                             </li>
-                            <li>
-                                <a>Navbar Item 2</a>
-                            </li>
+
                         </ul>
                     </div>
 
@@ -26,9 +39,17 @@ const Navbar = ({ children }) => {
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                         </label>
                     </div>
+
+                    {/* <select data-choose-theme>
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                        <option value="cupcake">Pink</option>
+                    </select> */}
+
                 </div>
                 {/* <!-- Page content here --> */}
                 {children}
+
 
             </div>
             <div class="drawer-side">
@@ -36,14 +57,9 @@ const Navbar = ({ children }) => {
                 <ul class="menu p-4 w-80 bg-base-100">
                     {/* <!-- Sidebar content here --> */}
                     <li>
-                        <a>Sidebar Item 1</a>
+                        {link}
                     </li>
-                    <li>
-                        <a>Sidebar Item 2</a
-                        ></li>
-
                 </ul>
-
             </div>
         </div>
     );
